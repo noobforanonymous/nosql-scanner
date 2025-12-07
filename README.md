@@ -28,7 +28,7 @@ Created by **Regaan** | December 2025
 
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/nosql-scanner.git
+git clone https://github.com/noobforanonymous/nosql-scanner.git
 cd nosql-scanner
 
 # Install dependencies
