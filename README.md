@@ -1,37 +1,30 @@
 # NoSQL Security Scanner
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![License](https://img.shields.io/badge/License-GPL%20v2-red)
-![Databases](https://img.shields.io/badge/Databases-4-orange)
-
-**Production-ready NoSQL injection scanner supporting MongoDB, Redis, Cassandra, and Elasticsearch**
+Multi-database NoSQL injection scanner supporting MongoDB, Redis, Cassandra, and Elasticsearch.
 
 Created by **Regaan** | December 2025
 
 ---
 
-## 🚀 Features
+## Features
 
-- ✅ **Multi-Database Support** - MongoDB, Redis, Cassandra, Elasticsearch
-- ✅ **150+ Attack Payloads** - Comprehensive injection testing
-- ✅ **Async HTTP Requests** - 10x faster scanning
-- ✅ **Database Cloning** - Clone MongoDB databases for analysis
-- ✅ **Blind Injection** - Timing-based attack detection
-- ✅ **Authentication Bypass** - Test login vulnerabilities
-- ✅ **Burp Suite Integration** - Proxy support
-- ✅ **HTML Reports** - Professional vulnerability reports
-- ✅ **Config Management** - Save and load scanner settings
+- Multi-database support (MongoDB, Redis, Cassandra, Elasticsearch)
+- 150+ attack payloads
+- Database cloning (MongoDB)
+- Blind injection (timing-based)
+- Authentication bypass testing
+- Async HTTP requests
+- Burp Suite integration (proxy support)
+- HTML report generation
+- Configuration management
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
-# Clone repository
 git clone https://github.com/noobforanonymous/nosql-scanner.git
 cd nosql-scanner
-
-# Install dependencies
 pip install -r requirements.txt
 
 # Optional: For database cloning
@@ -40,38 +33,38 @@ pip install pymongo
 
 ---
 
-## 🎯 Quick Start
+## Quick Start
 
-### MongoDB Scan:
+### MongoDB Scan
 ```bash
 python nosql_scanner.py https://example.com/api/login mongodb
 ```
 
-### Redis Scan:
+### Redis Scan
 ```bash
 python nosql_scanner.py https://example.com/api/cache redis
 ```
 
-### Cassandra Scan:
+### Cassandra Scan
 ```bash
 python nosql_scanner.py https://example.com/api/query cassandra
 ```
 
-### Elasticsearch Scan:
+### Elasticsearch Scan
 ```bash
 python nosql_scanner.py https://example.com/api/search elasticsearch
 ```
 
 ---
 
-## 📖 Usage Examples
+## Usage Examples
 
 ### Example 1: MongoDB Authentication Bypass
 ```bash
 python nosql_scanner.py https://example.com/api/login mongodb
 ```
 
-**Output:**
+Output:
 ```
 [*] Starting comprehensive NoSQL scan (mongodb)
 [*] Testing MongoDB operator injection...
@@ -96,19 +89,19 @@ async def clone():
 asyncio.run(clone())
 ```
 
-**Output:**
+Output:
 ```
 [*] Attempting to clone MongoDB database: production
 [*] Found 12 collections to clone
-[+] ✓ Cloned 1523 documents from users
-[+] ✓ Cloned 892 documents from orders
+[+] Cloned 1523 documents from users
+[+] Cloned 892 documents from orders
 [+] Database cloning complete!
 [+] Total documents cloned: 15234
 ```
 
 ---
 
-## 🔍 Supported Databases
+## Supported Databases
 
 ### MongoDB
 - Operator injection ($ne, $gt, $regex, etc.)
@@ -133,9 +126,9 @@ asyncio.run(clone())
 
 ---
 
-## 📊 Attack Payloads
+## Attack Payloads
 
-### MongoDB (23+ payloads):
+### MongoDB (23+ payloads)
 ```json
 {"$ne": null}
 {"$gt": ""}
@@ -144,7 +137,7 @@ asyncio.run(clone())
 {"$in": ["admin", "root"]}
 ```
 
-### Redis (12+ payloads):
+### Redis (12+ payloads)
 ```
 \n\r\nFLUSHALL\r\n
 \n\r\nCONFIG SET dir /var/www/html\r\n
@@ -153,15 +146,15 @@ asyncio.run(clone())
 
 ---
 
-## 🛠️ Advanced Features
+## Advanced Features
 
-### Database Cloning:
+### Database Cloning
 ```python
 # Clone entire MongoDB database
 result = await scanner.clone_mongodb_database("production_db")
 ```
 
-### Burp Suite Integration:
+### Burp Suite Integration
 ```python
 scanner = NoSQLScanner(
     "https://example.com/api",
@@ -170,7 +163,7 @@ scanner = NoSQLScanner(
 )
 ```
 
-### Configuration Management:
+### Configuration Management
 ```python
 # Save configuration
 scanner.save_config("nosql_config.json")
@@ -181,7 +174,7 @@ scanner = NoSQLScanner.load_config("nosql_config.json")
 
 ---
 
-## 📝 Requirements
+## Requirements
 
 - Python 3.8+
 - aiohttp
@@ -190,44 +183,45 @@ scanner = NoSQLScanner.load_config("nosql_config.json")
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions welcome!
+Contributions welcome. Please fork the repository and submit pull requests.
 
 ---
 
-## 📜 License
+## License
 
 GPL v2
 
 ---
 
-## 👤 Author
+## Author
 
 **Regaan**
+- GitHub: [@noobforanonymous](https://github.com/noobforanonymous)
 - Created: December 2025
 
 ---
 
-## 🙏 Credits
+## Credits
 
 Inspired by NoSQLMap and SQLMap projects.
 
 ---
 
-## ⚠️ Legal Disclaimer
+## Legal Disclaimer
 
-**IMPORTANT - READ BEFORE USE:**
+**IMPORTANT - READ BEFORE USE**
 
-This tool is designed for **authorized security testing only**.
+This tool is designed for authorized security testing only.
 
-- ✅ **DO USE** on systems you own
-- ✅ **DO USE** with written permission
-- ✅ **DO USE** for authorized penetration testing
-- ✅ **DO USE** for bug bounty programs (within scope)
-- ❌ **DO NOT USE** on systems without permission
-- ❌ **DO NOT USE** for illegal activities
-- ❌ **DO NOT USE** to cause harm or damage
+- DO USE on systems you own
+- DO USE with written permission
+- DO USE for authorized penetration testing
+- DO USE for bug bounty programs (within scope)
+- DO NOT USE on systems without permission
+- DO NOT USE for illegal activities
+- DO NOT USE to cause harm or damage
 
 **All security-related tools, experiments, and research are meant strictly for authorized environments.**
 
@@ -238,10 +232,6 @@ Unauthorized access to computer systems is illegal under:
 - Computer Misuse Act in the United Kingdom
 - Similar laws in other countries
 
-**By using this tool, you agree to use it responsibly and legally.**
+By using this tool, you agree to use it responsibly and legally.
 
 The author (Regaan) is not responsible for any misuse or damage caused by this tool.
-
----
-
-**Happy Hacking! 🎯**
